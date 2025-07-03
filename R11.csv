@@ -1,0 +1,15 @@
+﻿High,Delivery Truck,248,11206.88,1338507.99,1
+Low,Delivery Truck,250,11131.61,1330425.13,3
+Critical,Delivery Truck,228,10783.82,1221663.12,1
+Low,Regular Air,1280,10263.62,1371489.21,4
+High,Regular Air,1308,10005.01,1315867.53,1
+Not Specified,Regular Air,1277,9734.08,1282456.87,1
+Medium,Delivery Truck,205,9461.62,976613.94,1
+Medium,Regular Air,1225,9418.72,1304914.51,1
+Not Specified,Delivery Truck,215,9388.01,1086999.65,1
+Critical,Regular Air,1180,8586.76,1123422.35,1
+Critical,Express Air,200,1742.10,198004.42,1
+Medium,Express Air,201,1633.59,247361.93,1
+Low,Express Air,190,1551.63,191295.12,4
+Not Specified,Express Air,180,1470.06,194416.98,1
+High,Express Air,212,1453.53,208773.18,1
