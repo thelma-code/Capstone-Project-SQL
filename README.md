@@ -201,6 +201,17 @@ select KMS.customer_name, KMS.customer_segment, order_status.order_id, Order_sta
  join order_status
  on order_status.order_id = KMS.order_id
 ```
+[Dorothy Badders,Home Office,678,Returned
+Grant Carroll,Corporate,9927,Returned
+Grant Carroll,Corporate,9927,Returned
+Grant Carroll,Corporate,9927,Returned
+Edward Hooks,Consumer,11911,Returned
+Michelle Lonsdale,Home Office,12096,Returned
+Michelle Lonsdale,Home Office,12096,Returned
+Carlos Soltero,Small Business,12704,Returned
+Carlos Soltero,Small Business,12704,Returned
+Dorothy Badders,Home Office,15106,Returned
+loading R10New.csv…]()
 
 11. If the delivery truck is the most economical but the slowest shipping method and Express Air is the fastest but the most expensive one, do you think the company approriately spent shipping costs based on Order Priority?
 ```SQL
@@ -211,7 +222,32 @@ select KMS.customer_name, KMS.customer_segment, order_status.order_id, Order_sta
  group by order_priority, ship_mode
  order by TotalShippingCost desc
 ```
+[High,Delivery Truck,248,11206.88,1338507.99,1
+Low,Delivery Truck,250,11131.61,1330425.13,3
+Critical,Delivery Truck,228,10783.82,1221663.12,1
+Low,Regular Air,1280,10263.62,1371489.21,4
+High,Regular Air,1308,10005.01,1315867.53,1
+Not Specified,Regular Air,1277,9734.08,1282456.87,1
+Medium,Delivery Truck,205,9461.62,976613.94,1
+Medium,Regular Air,1225,9418.72,1304914.51,1
+Not Specified,Delivery Truck,215,9388.01,1086999.65,1
+Critical,Regular Air,1180,8586.76,1123422.35,1
+Critical,Express Air,200,1742.10,198004.42,1
+Medium,Express Air,201,1633.59,247361.93,1
+Low,Express Air,190,1551.63,191295.12,4
+Not Specified,Express Air,180,1470.06,194416.98,1
+High,Express Air,212,1453.53,208773.18,1
+ng R11.csv…]()
 
+--- based on the count of orders and shipping cost by order priority: only 12.20% of High & Criritcal Priority Orders were shipped using Express Air, while 14.09% of High & Critical Priority orders were shipped with the Delivery Truck, 73.69% where shipped using Regular Air.
+ ---13.58% of Low & Medium Priority orders were shipped with the Delivery Truck, 11.67% of Low & Medium Priority orders were shipped using ExpressAir, and 74.75% of Low & Medium Priority Orders were shipped with Regular Air.
+
+ **This suggests that KMS did not always align Shipping Modes with Order Priority,potentially wasting money and risking customer dissatisfaction on urgent/High Priority Orders.**
+
+### Recommendations
+- Bundle low value items to increase order Value
+- Introduce loyalty incentives for repeat small business customers
+- Align shipping method strictly with order priority
 
 
 
