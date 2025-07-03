@@ -37,7 +37,8 @@ EDA involved the exploring of the data to answer some questions about the data s
 
 1. Which product category had the highest sales?
 ``` SQL
-select Product_Category, SUM(sales) as HighestSales
+select top 1
+Product_Category, SUM(sales) as HighestSales
 from KMS
 group by Product_Category
 order by HighestSales desc
