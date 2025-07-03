@@ -96,6 +96,7 @@ select top 5
 	from KMS 
 	group by Customer_Name
 	order by Totalsales desc
+
 ----What products do they buy---
 select customer_name, product_category,COUNT(*) as PurchaseCount
 from KMS
