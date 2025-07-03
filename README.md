@@ -43,6 +43,8 @@ from KMS
 group by Product_Category
 order by HighestSales desc
 ```
+[Technology,5984248.30
+Uploading R1New.csv…]()
 
 2. What are the top 3 and bottom 3 regions in terms of sales?
 ```SQL
@@ -52,7 +54,14 @@ select top 3
 from KMS
 group by Region
 order by TotalSales desc
+```
 
+[West,3597549.33
+Ontario,3063212.55
+Prarie,2837304.59
+ploading R2a.csv…]()
+
+```SQL
 ----Bottom 3 Regions in terms of Sales----
 select top 3
   Region, SUM(Sales) as TotalSales
@@ -60,6 +69,10 @@ from KMS
 group by Region
 order by TotalSales asc
 ```
+[Nunavut,116376.47
+Northwest Territories,800847.34
+Yukon,975867.39
+g R2b.csv…]()
 
 3. What were the total sales of Appliances in Ontario?
 ```SQL
@@ -69,6 +82,8 @@ from KMS
 Where Province = 'ontario'
 and product_sub_category = 'Appliances'
 ```
+[202346.84
+oading R3.csv…]()
 
 4. Advise on how Management can increase Revenue from Bottom 10 customers
 ```SQL
@@ -78,6 +93,19 @@ select top 10
  group by Customer_Name, Customer_Segment
  order by TotalSales asc
 ```
+[Jeremy Farry,Small Business,85.72
+Michelle Ellison,Home Office,93.22
+Natalie DeCherney,Consumer,125.90
+Nicole Fjeld,Small Business,153.03
+Katrina Edelman,Corporate,180.76
+Bart Pistole,Consumer,195.83
+Dorothy Dickinson,Corporate,198.08
+Christine Kargatis,Small Business,293.22
+Eric Murdock,Home Office,343.33
+Chris McAfee,Consumer,350.18
+ading R4.csv…]()
+
+----Since the bottom 10 customers are mostly from the Consumer Segment(Home Offices/Small Businesses) and they primarily buy Office Supplies(likely low margin items like Paper, Pens, Folders etc), management could introduce bundled value packs eg Office Starter Kits which might include Office Supplies + small tech items(USB, drives, etc) to encourage bulk buying. Management could also introduce Volume Discounts eg "Buy more, Save More" discounts since small businesses and home users may be price sensitive
 
 5. KMS incurred the most shipping cost using which shipping method?
 ```SQL
@@ -86,6 +114,10 @@ from KMS
 group by Ship_mode
 order by TotalShippingCost desc
 ```
+[Delivery Truck,51971.94
+Regular Air,48008.19
+Express Air,7850.91
+ding R5.csv…]()
 
 **Case Scenario 2**
 
@@ -97,13 +129,34 @@ select top 5
 	from KMS 
 	group by Customer_Name
 	order by Totalsales desc
+```
+[Emily Phan,117124.43
+Deborah Brumfield,97433.14
+Roy Skaria,92542.16
+Sylvia Foulston,88875.76
+Grant Carroll,88417.00
+oading R6.csv…]()
 
+```SQL
 ----What products do they buy---
 select customer_name, product_category,COUNT(*) as PurchaseCount
 from KMS
 where Customer_Name in ('Emily Phan','Deborah Brumfield','Roy Skaria','Sylvia Foulston','Grant Carrol')
 group by Customer_Name, product_category
 ```
+[Deborah Brumfield,Furniture,4
+Emily Phan,Furniture,1
+Roy Skaria,Furniture,8
+Sylvia Foulston,Furniture,10
+Deborah Brumfield,Office Supplies,8
+Emily Phan,Office Supplies,5
+Roy Skaria,Office Supplies,12
+Sylvia Foulston,Office Supplies,9
+Deborah Brumfield,Technology,8
+Emily Phan,Technology,4
+Roy Skaria,Technology,6
+Sylvia Foulston,Technology,5
+ding R6b.csv…]()
 
 7. Which small business customer had the highest sales?
 ```SQL
@@ -114,6 +167,8 @@ where customer_segment = 'Small Business'
 group by customer_name
 order by TotalSales desc
 ```
+[Dennis Kane,75967.59
+ding R7.csv…]()
 
 8. Which corporate customer placed the most number of orders in 2009-2012?
 ```SQL
@@ -124,6 +179,8 @@ select top 1 customer_name, COUNT(order_id) as OrderCount
  group by customer_name
  order by COUNT(order_id) DESC
 ```
+[Adam Hart,27
+ing R8.csv…]()
 
 9. Which consumer customer was the most profitable one?
 ```SQL
@@ -134,6 +191,8 @@ select top 1
   group by customer_name
   order by TotalProfit desc
 ```
+[Emily Phan,34005.44
+ing R9.csv…]()
 
 10. Which customer returned items, and what segment do they belong to?
 ```SQL
